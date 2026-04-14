@@ -1,0 +1,12 @@
+Documents/
+GPS/
+r20_dataset/
+r22_dataset/
+RDD2022/
+__pycache__/
+runs/
+*.zip
+*.md
+augmented_output/
+*.mp4
+videonames.txt

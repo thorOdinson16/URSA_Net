@@ -1,0 +1,36 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (13)
+=======================================================
+  Total segments assessed : 6
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 2
+  Monitor only            : 4
+  Reinspection flags      : 2
+
+  Mean priority score     : 0.1866
+  Max priority score      : 0.4479
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg    1 | Severity 0.2817 | Priority 0.4479 | schedule | alligator_crack
+  Rank   2 | Seg    2 | Severity 0.2307 | Priority 0.4270 | schedule | alligator_crack
+  Rank   3 | Seg    0 | Severity 0.0395 | Priority 0.0851 | monitor  | alligator_crack
+  Rank   4 | Seg    4 | Severity 0.0366 | Priority 0.0817 | monitor  | longitudinal_crack
+  Rank   5 | Seg    3 | Severity 0.0314 | Priority 0.0713 | monitor  | pothole
+  Rank   6 | Seg    5 | Severity 0.0018 | Priority 0.0070 | monitor  | pothole
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg    1 | Severity 0.2817 | Uncertainty 0.6710 | alligator_crack
+  Seg    2 | Severity 0.2307 | Uncertainty 0.7701 | alligator_crack
+
+=======================================================
+Decision layer complete.
+=======================================================

@@ -1,0 +1,43 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (25)
+=======================================================
+  Total segments assessed : 30
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 4
+  Monitor only            : 26
+  Reinspection flags      : 5
+
+  Mean priority score     : 0.0943
+  Max priority score      : 0.4020
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg   19 | Severity 0.1995 | Priority 0.4020 | schedule | alligator_crack
+  Rank   2 | Seg   28 | Severity 0.1842 | Priority 0.3942 | schedule | alligator_crack
+  Rank   3 | Seg   21 | Severity 0.1218 | Priority 0.3339 | schedule | alligator_crack
+  Rank   4 | Seg   27 | Severity 0.1140 | Priority 0.3239 | schedule | alligator_crack
+  Rank   5 | Seg   15 | Severity 0.0712 | Priority 0.2841 | monitor  | alligator_crack
+  Rank   6 | Seg    2 | Severity 0.0712 | Priority 0.1247 | monitor  | alligator_crack
+  Rank   7 | Seg   18 | Severity 0.0498 | Priority 0.1064 | monitor  | alligator_crack
+  Rank   8 | Seg   29 | Severity 0.0428 | Priority 0.0997 | monitor  | alligator_crack
+  Rank   9 | Seg   20 | Severity 0.0397 | Priority 0.0858 | monitor  | longitudinal_crack
+  Rank  10 | Seg   23 | Severity 0.0419 | Priority 0.0800 | monitor  | longitudinal_crack
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg   19 | Severity 0.1995 | Uncertainty 0.7492 | alligator_crack
+  Seg   28 | Severity 0.1842 | Uncertainty 0.7685 | alligator_crack
+  Seg   21 | Severity 0.1218 | Uncertainty 0.6577 | alligator_crack
+  Seg   27 | Severity 0.1140 | Uncertainty 0.6273 | alligator_crack
+  Seg   15 | Severity 0.0712 | Uncertainty 0.5617 | alligator_crack
+
+=======================================================
+Decision layer complete.
+=======================================================

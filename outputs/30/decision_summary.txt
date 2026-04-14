@@ -1,0 +1,45 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (30)
+=======================================================
+  Total segments assessed : 16
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 6
+  Monitor only            : 10
+  Reinspection flags      : 7
+
+  Mean priority score     : 0.2088
+  Max priority score      : 0.4777
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg   13 | Severity 0.2761 | Priority 0.4777 | schedule | alligator_crack
+  Rank   2 | Seg   10 | Severity 0.2637 | Priority 0.4703 | schedule | pothole
+  Rank   3 | Seg    7 | Severity 0.1878 | Priority 0.3974 | schedule | alligator_crack
+  Rank   4 | Seg    6 | Severity 0.1638 | Priority 0.3694 | schedule | alligator_crack
+  Rank   5 | Seg    5 | Severity 0.1376 | Priority 0.3596 | schedule | pothole
+  Rank   6 | Seg   15 | Severity 0.1060 | Priority 0.3220 | schedule | alligator_crack
+  Rank   7 | Seg    0 | Severity 0.0716 | Priority 0.2873 | monitor  | alligator_crack
+  Rank   8 | Seg    8 | Severity 0.0964 | Priority 0.1374 | monitor  | pothole
+  Rank   9 | Seg   12 | Severity 0.0628 | Priority 0.1173 | monitor  | alligator_crack
+  Rank  10 | Seg    1 | Severity 0.0559 | Priority 0.1119 | monitor  | longitudinal_crack
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg   13 | Severity 0.2761 | Uncertainty 0.8961 | alligator_crack
+  Seg   10 | Severity 0.2637 | Uncertainty 0.9049 | pothole
+  Seg    7 | Severity 0.1878 | Uncertainty 0.7729 | alligator_crack
+  Seg    6 | Severity 0.1638 | Uncertainty 0.6979 | alligator_crack
+  Seg    5 | Severity 0.1376 | Uncertainty 0.7552 | pothole
+  Seg   15 | Severity 0.1060 | Uncertainty 0.6521 | alligator_crack
+  Seg    0 | Severity 0.0716 | Uncertainty 0.5814 | alligator_crack
+
+=======================================================
+Decision layer complete.
+=======================================================

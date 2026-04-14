@@ -1,0 +1,23 @@
+=======================================================
+URSA-Net — Damage Survey Summary (Bengaluru South)
+=======================================================
+Roads surveyed          : 32
+Total km surveyed       : 17.71 km
+Total 15m segments      : 1,076
+  Urgent                : 0  (0.0%)
+  Schedule              : 125  (11.6%)
+  Monitor               : 951  (88.4%)
+Reinspection flags      : 148  (13.8% of segments)
+
+Dominant class distribution:
+  pothole                     : 24 roads (75.0%)
+  alligator_crack             : 7 roads (21.9%)
+  longitudinal_crack          : 1 roads (3.1%)
+
+Top 5 highest-priority roads:
+  18                           priority=0.311  schedule=11  reinsp=11  class=pothole
+  8                            priority=0.301  schedule=8  reinsp=8  class=alligator_crack
+  30                           priority=0.209  schedule=6  reinsp=7  class=alligator_crack
+  7                            priority=0.192  schedule=7  reinsp=9  class=pothole
+  13                           priority=0.187  schedule=2  reinsp=2  class=alligator_crack
+=======================================================

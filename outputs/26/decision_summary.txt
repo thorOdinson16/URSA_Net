@@ -1,0 +1,42 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (26)
+=======================================================
+  Total segments assessed : 21
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 4
+  Monitor only            : 17
+  Reinspection flags      : 4
+
+  Mean priority score     : 0.1157
+  Max priority score      : 0.4229
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg   18 | Severity 0.2642 | Priority 0.4229 | schedule | pothole
+  Rank   2 | Seg   19 | Severity 0.2712 | Priority 0.4187 | schedule | pothole
+  Rank   3 | Seg   15 | Severity 0.1849 | Priority 0.3660 | schedule | longitudinal_crack
+  Rank   4 | Seg    8 | Severity 0.1645 | Priority 0.3428 | schedule | pothole
+  Rank   5 | Seg    6 | Severity 0.1427 | Priority 0.1671 | monitor  | pothole
+  Rank   6 | Seg    9 | Severity 0.0954 | Priority 0.1377 | monitor  | longitudinal_crack
+  Rank   7 | Seg   12 | Severity 0.0640 | Priority 0.1056 | monitor  | pothole
+  Rank   8 | Seg   11 | Severity 0.0484 | Priority 0.0929 | monitor  | longitudinal_crack
+  Rank   9 | Seg   16 | Severity 0.0533 | Priority 0.0917 | monitor  | pothole
+  Rank  10 | Seg   20 | Severity 0.0334 | Priority 0.0695 | monitor  | pothole
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg   18 | Severity 0.2642 | Uncertainty 0.5865 | pothole
+  Seg   19 | Severity 0.2712 | Uncertainty 0.5261 | pothole
+  Seg   15 | Severity 0.1849 | Uncertainty 0.5771 | longitudinal_crack
+  Seg    8 | Severity 0.1645 | Uncertainty 0.5172 | pothole
+
+=======================================================
+Decision layer complete.
+=======================================================

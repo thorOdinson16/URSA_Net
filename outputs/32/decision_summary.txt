@@ -1,0 +1,48 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (32)
+=======================================================
+  Total segments assessed : 29
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 9
+  Monitor only            : 20
+  Reinspection flags      : 10
+
+  Mean priority score     : 0.1830
+  Max priority score      : 0.4256
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg   17 | Severity 0.2695 | Priority 0.4256 | schedule | pothole
+  Rank   2 | Seg    8 | Severity 0.2002 | Priority 0.3843 | schedule | pothole
+  Rank   3 | Seg    5 | Severity 0.1626 | Priority 0.3518 | schedule | pothole
+  Rank   4 | Seg   10 | Severity 0.1465 | Priority 0.3380 | schedule | pothole
+  Rank   5 | Seg   27 | Severity 0.1339 | Priority 0.3312 | schedule | pothole
+  Rank   6 | Seg   16 | Severity 0.1363 | Priority 0.3277 | schedule | pothole
+  Rank   7 | Seg   14 | Severity 0.1060 | Priority 0.3229 | schedule | alligator_crack
+  Rank   8 | Seg    1 | Severity 0.1097 | Priority 0.3139 | schedule | pothole
+  Rank   9 | Seg   15 | Severity 0.0995 | Priority 0.3090 | schedule | longitudinal_crack
+  Rank  10 | Seg    4 | Severity 0.0989 | Priority 0.2964 | monitor  | pothole
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg   17 | Severity 0.2695 | Uncertainty 0.5800 | pothole
+  Seg    8 | Severity 0.2002 | Uncertainty 0.6276 | pothole
+  Seg    5 | Severity 0.1626 | Uncertainty 0.5865 | pothole
+  Seg   10 | Severity 0.1465 | Uncertainty 0.5692 | pothole
+  Seg   27 | Severity 0.1339 | Uncertainty 0.5833 | pothole
+  Seg   16 | Severity 0.1363 | Uncertainty 0.5486 | pothole
+  Seg   14 | Severity 0.1060 | Uncertainty 0.6580 | alligator_crack
+  Seg    1 | Severity 0.1097 | Uncertainty 0.5809 | pothole
+  Seg   15 | Severity 0.0995 | Uncertainty 0.5961 | longitudinal_crack
+  Seg    4 | Severity 0.0989 | Uncertainty 0.5143 | pothole
+
+=======================================================
+Decision layer complete.
+=======================================================

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cfb231b6e822100b6eea0ba84475bfc4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_cfb231b6e822100b6eea0ba84475bfc4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cfb231b6e822100b6eea0ba84475bfc4 = L.map(
+                "map_cfb231b6e822100b6eea0ba84475bfc4",
+                {
+                    center: [12.90310201993753, 77.53962522583853],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 16,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_abdbf28eb7b5a30ae594f03f5dbb77c2 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_abdbf28eb7b5a30ae594f03f5dbb77c2.addTo(map_cfb231b6e822100b6eea0ba84475bfc4);
+        
+    
+            var heat_map_b71c068dc770de9d0ac943a2dddd7d96 = L.heatLayer(
+                [[12.90248389, 77.53937986, 0.504435], [12.90248389, 77.53937995, 0.503873], [12.90248389, 77.53938004, 0.503254], [12.9024839, 77.53938013, 0.504999], [12.9024839, 77.53938022, 0.502207], [12.9024839, 77.53938031, 0.500114], [12.9024839, 77.5393804, 0.493483], [12.90248391, 77.53938048, 0.490342], [12.90248391, 77.53938057, 0.486662], [12.90248391, 77.53938066, 0.483729], [12.90248391, 77.53938075, 0.48414], [12.90248392, 77.53938084, 0.488248], [12.90248392, 77.53938093, 0.480867], [12.90248392, 77.53938102, 0.492339], [12.90248392, 77.53938111, 0.476899], [12.90248392, 77.5393812, 0.615464], [12.90248393, 77.53938129, 0.618334], [12.90248393, 77.53938138, 0.471347], [12.90248393, 77.53938147, 0.48048], [12.90248393, 77.53938155, 0.474289], [12.90248394, 77.53938164, 0.476739], [12.90248394, 77.53938173, 0.488394], [12.90248394, 77.53938182, 0.48545], [12.90248394, 77.53938191, 0.497652], [12.90248395, 77.539382, 0.502847], [12.90248395, 77.53938209, 0.496511], [12.90248395, 77.53938218, 0.494927], [12.90248397, 77.53938259, 0.506412], [12.90248412, 77.53938562, 0.439149], [12.90248415, 77.53938607, 0.42179], [12.90248414, 77.53938628, 0.239648], [12.90272668, 77.53946379, 0.30036], [12.90272875, 77.53946481, 0.339583], [12.9028522, 77.53953848, 0.27925], [12.9028532, 77.53953906, 0.315392], [12.90285371, 77.53953936, 0.317498], [12.90285421, 77.53953965, 0.320822], [12.90292518, 77.53960545, 0.398494], [12.90292555, 77.5396064, 0.409979], [12.90340936, 77.53983019, 0.003714], [12.90340983, 77.53982921, 0.003491], [12.90341077, 77.53982725, 0.003752], [12.9034188, 77.5398039, 0.031176], [12.90341915, 77.53980283, 0.017334], [12.90341933, 77.5398023, 0.031846], [12.90341951, 77.53980176, 0.099446], [12.90342023, 77.53979962, 0.082592], [12.90342058, 77.53979855, 0.205411], [12.90344, 77.53976762, 0.284948], [12.90354676, 77.53977453, 0.234343], [12.90354786, 77.53977511, 0.242215], [12.90354895, 77.53977569, 0.260944], [12.90355004, 77.53977627, 0.269247], [12.90361971, 77.53982432, 0.002143], [12.90362048, 77.53982483, 0.060823], [12.90362505, 77.53982793, 0.017113], [12.90362581, 77.53982844, 0.016577]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 12,
+  "blur": 10,
+}
+            );
+        
+    
+            heat_map_b71c068dc770de9d0ac943a2dddd7d96.addTo(map_cfb231b6e822100b6eea0ba84475bfc4);
+        
+</script>
+</html>

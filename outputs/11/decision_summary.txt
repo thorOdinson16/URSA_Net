@@ -1,0 +1,43 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (11)
+=======================================================
+  Total segments assessed : 44
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 5
+  Monitor only            : 39
+  Reinspection flags      : 5
+
+  Mean priority score     : 0.0845
+  Max priority score      : 0.3747
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg    2 | Severity 0.1594 | Priority 0.3747 | schedule | alligator_crack
+  Rank   2 | Seg    5 | Severity 0.1759 | Priority 0.3726 | schedule | pothole
+  Rank   3 | Seg   37 | Severity 0.1683 | Priority 0.3570 | schedule | pothole
+  Rank   4 | Seg   28 | Severity 0.1504 | Priority 0.3388 | schedule | pothole
+  Rank   5 | Seg   14 | Severity 0.1293 | Priority 0.3278 | schedule | longitudinal_crack
+  Rank   6 | Seg   34 | Severity 0.1092 | Priority 0.1488 | monitor  | pothole
+  Rank   7 | Seg    4 | Severity 0.0885 | Priority 0.1321 | monitor  | pothole
+  Rank   8 | Seg   10 | Severity 0.0867 | Priority 0.1311 | monitor  | pothole
+  Rank   9 | Seg   17 | Severity 0.0975 | Priority 0.1308 | monitor  | pothole
+  Rank  10 | Seg   15 | Severity 0.0715 | Priority 0.1227 | monitor  | longitudinal_crack
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg    2 | Severity 0.1594 | Uncertainty 0.7543 | alligator_crack
+  Seg    5 | Severity 0.1759 | Uncertainty 0.6630 | pothole
+  Seg   37 | Severity 0.1683 | Uncertainty 0.5948 | pothole
+  Seg   28 | Severity 0.1504 | Uncertainty 0.5570 | pothole
+  Seg   14 | Severity 0.1293 | Uncertainty 0.5822 | longitudinal_crack
+
+=======================================================
+Decision layer complete.
+=======================================================

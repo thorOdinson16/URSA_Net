@@ -1,0 +1,43 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (4)
+=======================================================
+  Total segments assessed : 27
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 5
+  Monitor only            : 22
+  Reinspection flags      : 5
+
+  Mean priority score     : 0.0937
+  Max priority score      : 0.4764
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg   22 | Severity 0.2668 | Priority 0.4764 | schedule | alligator_crack
+  Rank   2 | Seg   23 | Severity 0.2518 | Priority 0.4596 | schedule | alligator_crack
+  Rank   3 | Seg   24 | Severity 0.1541 | Priority 0.3412 | schedule | alligator_crack
+  Rank   4 | Seg   19 | Severity 0.1135 | Priority 0.3235 | schedule | alligator_crack
+  Rank   5 | Seg   17 | Severity 0.1058 | Priority 0.3006 | schedule | transverse_crack
+  Rank   6 | Seg    9 | Severity 0.0558 | Priority 0.1048 | monitor  | alligator_crack
+  Rank   7 | Seg    3 | Severity 0.0280 | Priority 0.0691 | monitor  | alligator_crack
+  Rank   8 | Seg    7 | Severity 0.0238 | Priority 0.0628 | monitor  | pothole
+  Rank   9 | Seg    0 | Severity 0.0182 | Priority 0.0523 | monitor  | pothole
+  Rank  10 | Seg   25 | Severity 0.0182 | Priority 0.0479 | monitor  | longitudinal_crack
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg   22 | Severity 0.2668 | Uncertainty 0.9305 | alligator_crack
+  Seg   23 | Severity 0.2518 | Uncertainty 0.8890 | alligator_crack
+  Seg   24 | Severity 0.1541 | Uncertainty 0.5558 | alligator_crack
+  Seg   19 | Severity 0.1135 | Uncertainty 0.6269 | alligator_crack
+  Seg   17 | Severity 0.1058 | Uncertainty 0.5107 | transverse_crack
+
+=======================================================
+Decision layer complete.
+=======================================================

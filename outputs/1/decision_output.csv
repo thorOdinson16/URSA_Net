@@ -1,0 +1,15 @@
+segment_id,first_frame,last_frame,num_frames,weighted_severity,weighted_uncertainty,weighted_confidence,mean_reliability,mean_detections,severity_std,centroid_lat,centroid_lon,dominant_class,severity_label,reinspection_flag,priority_score,maintenance_action,priority_rank
+0,frame_000000.jpg,frame_000472.jpg,473,0.032238,0.404997,0.029647,0.527628,0.07,0.121499,12.902502,77.53938447,alligator_crack,low,0,0.083316,monitor,1
+3,frame_000716.jpg,frame_000868.jpg,153,0.013731,0.222357,0.012416,0.522019,0.04,0.066707,12.90288926,77.53956981,pothole,low,0,0.042965,monitor,2
+9,frame_001543.jpg,frame_001655.jpg,113,0.008997,0.155275,0.012384,0.524437,0.04,0.046582,12.90352588,77.53976875,pothole,low,0,0.029589,monitor,3
+2,frame_000591.jpg,frame_000715.jpg,125,0.005021,0.134083,0.005205,0.532147,0.02,0.040225,12.90278801,77.53949869,pothole,low,0,0.023627,monitor,4
+8,frame_001371.jpg,frame_001542.jpg,172,0.004477,0.094771,0.018901,0.525047,0.06,0.028431,12.90342261,77.53980145,longitudinal_crack,low,0,0.01735,monitor,5
+10,frame_001656.jpg,frame_001799.jpg,144,0.000667,0.018017,0.008673,0.509072,0.03,0.005405,12.90364408,77.53982915,longitudinal_crack,low,0,0.003169,monitor,6
+4,frame_000869.jpg,frame_000998.jpg,130,0.0,0.0,0.0,0.527527,0.0,0.0,12.90297728,77.53967828,none,low,0,0.0,monitor,7
+1,frame_000473.jpg,frame_000590.jpg,118,0.0,0.0,0.0,0.522217,0.0,0.0,12.90266538,77.53942937,none,low,0,0.0,monitor,7
+7,frame_001221.jpg,frame_001370.jpg,150,0.0,0.0,0.0,0.544317,0.0,0.0,12.903336,77.53987296,none,low,0,0.0,monitor,7
+6,frame_001122.jpg,frame_001220.jpg,99,0.0,0.0,0.0,0.521682,0.0,0.0,12.90321396,77.53980977,none,low,0,0.0,monitor,7
+5,frame_000999.jpg,frame_001121.jpg,123,0.0,0.0,0.0,0.515242,0.0,0.0,12.90309469,77.53974246,none,low,0,0.0,monitor,7
+11,frame_001800.jpg,frame_001894.jpg,95,0.0,0.0,0.0,0.509112,0.0,0.0,12.90373533,77.53975822,none,low,0,0.0,monitor,7
+12,frame_001895.jpg,frame_002003.jpg,109,0.0,0.0,0.0,0.511828,0.0,0.0,12.90380902,77.53964129,none,low,0,0.0,monitor,7
+13,frame_002004.jpg,frame_002080.jpg,77,0.0,0.0,0.0,0.518427,0.0,0.0,12.90387803,77.53955068,none,low,0,0.0,monitor,7

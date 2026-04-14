@@ -1,0 +1,44 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (20)
+=======================================================
+  Total segments assessed : 93
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 5
+  Monitor only            : 88
+  Reinspection flags      : 6
+
+  Mean priority score     : 0.0385
+  Max priority score      : 0.4894
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg   46 | Severity 0.3019 | Priority 0.4894 | schedule | alligator_crack
+  Rank   2 | Seg   45 | Severity 0.1322 | Priority 0.3305 | schedule | pothole
+  Rank   3 | Seg   92 | Severity 0.1136 | Priority 0.3238 | schedule | alligator_crack
+  Rank   4 | Seg   70 | Severity 0.1179 | Priority 0.3195 | schedule | longitudinal_crack
+  Rank   5 | Seg   71 | Severity 0.1179 | Priority 0.3188 | schedule | longitudinal_crack
+  Rank   6 | Seg   86 | Severity 0.0885 | Priority 0.2911 | monitor  | longitudinal_crack
+  Rank   7 | Seg   37 | Severity 0.1081 | Priority 0.1431 | monitor  | pothole
+  Rank   8 | Seg   36 | Severity 0.0784 | Priority 0.1104 | monitor  | pothole
+  Rank   9 | Seg   39 | Severity 0.0493 | Priority 0.1064 | monitor  | alligator_crack
+  Rank  10 | Seg   35 | Severity 0.0620 | Priority 0.0921 | monitor  | pothole
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg   46 | Severity 0.3019 | Uncertainty 0.8540 | alligator_crack
+  Seg   45 | Severity 0.1322 | Uncertainty 0.5864 | pothole
+  Seg   92 | Severity 0.1136 | Uncertainty 0.6285 | alligator_crack
+  Seg   70 | Severity 0.1179 | Uncertainty 0.5799 | longitudinal_crack
+  Seg   71 | Severity 0.1179 | Uncertainty 0.5754 | longitudinal_crack
+  Seg   86 | Severity 0.0885 | Uncertainty 0.5275 | longitudinal_crack
+
+=======================================================
+Decision layer complete.
+=======================================================

@@ -1,0 +1,4 @@
+metric,day_mean,lowlight_mean,day_median,lowlight_median,mann_whitney_u,p_value,significant
+Frame Retention Rate (%),100.0,100.0,100.0,100.0,110.0,1.0,ns
+Mean TTA Uncertainty,0.031502,0.027955,0.032661,0.02122,136.0,0.299865,ns
+Mean Severity Score,0.060102,0.038873,0.05082,0.017412,176.0,0.007746,**

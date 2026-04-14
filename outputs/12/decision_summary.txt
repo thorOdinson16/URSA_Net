@@ -1,0 +1,43 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (12)
+=======================================================
+  Total segments assessed : 42
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 6
+  Monitor only            : 36
+  Reinspection flags      : 5
+
+  Mean priority score     : 0.1165
+  Max priority score      : 0.5697
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg   12 | Severity 0.4812 | Priority 0.5697 | schedule | alligator_crack
+  Rank   2 | Seg   13 | Severity 0.3853 | Priority 0.5157 | schedule | alligator_crack
+  Rank   3 | Seg   11 | Severity 0.4676 | Priority 0.3795 | schedule | alligator_crack
+  Rank   4 | Seg    2 | Severity 0.1801 | Priority 0.3590 | schedule | pothole
+  Rank   5 | Seg   10 | Severity 0.4046 | Priority 0.3515 | schedule | alligator_crack
+  Rank   6 | Seg   31 | Severity 0.1129 | Priority 0.3122 | schedule | pothole
+  Rank   7 | Seg   38 | Severity 0.0917 | Priority 0.2914 | monitor  | pothole
+  Rank   8 | Seg   33 | Severity 0.1341 | Priority 0.1622 | monitor  | pothole
+  Rank   9 | Seg    1 | Severity 0.1047 | Priority 0.1452 | monitor  | pothole
+  Rank  10 | Seg    0 | Severity 0.1125 | Priority 0.1357 | monitor  | pothole
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg   12 | Severity 0.4812 | Uncertainty 0.5526 | alligator_crack
+  Seg   13 | Severity 0.3853 | Uncertainty 0.6401 | alligator_crack
+  Seg    2 | Severity 0.1801 | Uncertainty 0.5529 | pothole
+  Seg   31 | Severity 0.1129 | Uncertainty 0.5543 | pothole
+  Seg   38 | Severity 0.0917 | Uncertainty 0.5148 | pothole
+
+=======================================================
+Decision layer complete.
+=======================================================

@@ -1,0 +1,27 @@
+============================================================
+URSA-Net — DATASET SUMMARY
+============================================================
+Videos processed       : 32
+Total road surveyed    : 17.71 km
+Total frames extracted : 101,633
+Total frames retained  : 101,633
+Mean retention rate    : 100.00%
+Total detections       : 22,885
+Mean uncertainty       : 0.030394
+Mean severity score    : 0.053468
+Total segments         : 1,076
+Urgent segments        : 0
+Schedule segments      : 125
+Monitor segments       : 951
+Reinspection flags     : 148
+
+-- Time of day distribution --
+day        : 22 videos
+evening    : 9 videos
+night      : 1 videos
+
+-- Dominant class distribution --
+pothole                   : 24 videos
+alligator_crack           : 7 videos
+longitudinal_crack        : 1 videos
+============================================================

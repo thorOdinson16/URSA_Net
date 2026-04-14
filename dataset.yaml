@@ -1,0 +1,16 @@
+path: .
+
+train:
+  - r20_dataset/images/train
+  - r22_dataset/images/train
+  - augmented_output/images
+
+val:
+  - r20_dataset/images/val
+  - r22_dataset/images/val
+
+names:
+  0: longitudinal_crack
+  1: transverse_crack
+  2: alligator_crack
+  3: pothole

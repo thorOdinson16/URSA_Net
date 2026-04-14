@@ -1,0 +1,7 @@
+segment_id,first_frame,last_frame,num_frames,weighted_severity,weighted_uncertainty,weighted_confidence,mean_reliability,mean_detections,severity_std,centroid_lat,centroid_lon,dominant_class,severity_label,reinspection_flag
+0,frame_000000.jpg,frame_000344.jpg,345,0.039472,0.38282,0.038743,0.573618,0.13,0.114846,12.93346642,77.53980815,alligator_crack,low,0
+1,frame_000345.jpg,frame_000463.jpg,119,0.281724,0.671045,0.300902,0.610691,0.79,0.201314,12.93335402,77.53994753,alligator_crack,medium,1
+2,frame_000464.jpg,frame_000589.jpg,126,0.230717,0.770123,0.223505,0.731391,0.58,0.231037,12.93327031,77.54005678,alligator_crack,medium,1
+3,frame_000590.jpg,frame_000707.jpg,118,0.031402,0.328709,0.040996,0.819469,0.1,0.098613,12.93318069,77.54015828,pothole,low,0
+4,frame_000708.jpg,frame_000811.jpg,104,0.036599,0.373545,0.038269,0.749051,0.11,0.112064,12.9330933,77.54026278,longitudinal_crack,low,0
+5,frame_000812.jpg,frame_000873.jpg,62,0.001762,0.038295,0.00542,0.820394,0.02,0.011489,12.93302717,77.54035011,pothole,low,0
