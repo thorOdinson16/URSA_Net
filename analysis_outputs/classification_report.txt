@@ -1,0 +1,20 @@
+Classification Report: Pipeline vs Human Consensus
+============================================================
+
+              precision    recall  f1-score   support
+
+         Low       0.78      0.91      0.84        47
+      Medium       0.76      0.52      0.62        25
+
+    accuracy                           0.78        72
+   macro avg       0.77      0.72      0.73        72
+weighted avg       0.78      0.78      0.77        72
+
+
+Confusion Matrix:
+[[43  4]
+ [12 13]]
+
+Normalized Confusion Matrix:
+[[0.91489362 0.08510638]
+ [0.48       0.52      ]]
