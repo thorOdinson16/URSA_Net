@@ -25,7 +25,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 METRICS = [
     ("retention_pct",    "Frame Retention Rate (%)",   "Retention (%)"),
-    ("mean_uncertainty", "Mean TTA Uncertainty",        "Uncertainty"),
+    ("mean_uncertainty", "Mean Intra-frame Uncertainty",        "Uncertainty"),
     ("mean_severity",    "Mean Severity Score",         "Severity Score"),
 ]
 
