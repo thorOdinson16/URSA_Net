@@ -16,7 +16,7 @@ OUTPUT_VIDEO   = cfg.out("output_video.mp4")
 SEVERITY_CSV   = cfg.out("severity_scores.csv")
 
 FPS_NORMAL       = 30
-FPS_DAMAGE       = 6
+FPS_DAMAGE       = 10
 DAMAGE_THRESHOLD = 0.0
 
 # Only clear the per-video temp folders, not global ones
