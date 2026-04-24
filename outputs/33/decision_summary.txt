@@ -1,0 +1,43 @@
+=======================================================
+URSA-Net - DECISION SUMMARY  (33)
+=======================================================
+  Total segments assessed : 12
+  Urgent maintenance      : 0
+  Scheduled maintenance   : 5
+  Monitor only            : 7
+  Reinspection flags      : 5
+
+  Mean priority score     : 0.2014
+  Max priority score      : 0.4338
+
+-------------------------------------------------------
+TOP 10 PRIORITY SEGMENTS
+-------------------------------------------------------
+  Rank   1 | Seg    3 | Severity 0.2696 | Priority 0.4338 | schedule | pothole
+  Rank   2 | Seg    1 | Severity 0.1780 | Priority 0.3723 | schedule | longitudinal_crack
+  Rank   3 | Seg    0 | Severity 0.1537 | Priority 0.3507 | schedule | alligator_crack
+  Rank   4 | Seg    6 | Severity 0.1716 | Priority 0.3463 | schedule | pothole
+  Rank   5 | Seg   10 | Severity 0.1441 | Priority 0.3344 | schedule | pothole
+  Rank   6 | Seg    5 | Severity 0.1547 | Priority 0.1789 | monitor  | pothole
+  Rank   7 | Seg    4 | Severity 0.0856 | Priority 0.1333 | monitor  | pothole
+  Rank   8 | Seg    8 | Severity 0.0737 | Priority 0.1098 | monitor  | pothole
+  Rank   9 | Seg    2 | Severity 0.0566 | Priority 0.1056 | monitor  | transverse_crack
+  Rank  10 | Seg    9 | Severity 0.0356 | Priority 0.0455 | monitor  | pothole
+
+-------------------------------------------------------
+URGENT SEGMENTS
+-------------------------------------------------------
+  None
+
+-------------------------------------------------------
+REINSPECTION REQUIRED
+-------------------------------------------------------
+  Seg    3 | Severity 0.2696 | Uncertainty 0.6340 | pothole
+  Seg    1 | Severity 0.1780 | Uncertainty 0.6508 | longitudinal_crack
+  Seg    0 | Severity 0.1537 | Uncertainty 0.6207 | alligator_crack
+  Seg    6 | Severity 0.1716 | Uncertainty 0.5082 | pothole
+  Seg   10 | Severity 0.1441 | Uncertainty 0.5568 | pothole
+
+=======================================================
+Decision layer complete.
+=======================================================

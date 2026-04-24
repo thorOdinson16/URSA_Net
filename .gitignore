@@ -10,3 +10,4 @@ runs/
 augmented_output/
 *.mp4
 videonames.txt
+*.pdf
