@@ -337,10 +337,10 @@ Place paired `.mp4` and `.gpx` files in the `GPS/` directory. File stems must ma
 
 ```
 GPS/
-  1IronShop.mp4
-  1IronShop.gpx
-  2KaryaSiddhi.mp4
-  2KaryaSiddhi.gpx
+  1.mp4
+  1.gpx
+  2.mp4
+  2.gpx
   ...
 ```
 
@@ -361,9 +361,9 @@ Runs `gps_sync.py` once to produce `geotagged_frames.csv`, then processes each v
 ### Single video (manual stage-by-stage)
 
 ```bash
-export URSA_VIDEO=1IronShop
+export URSA_VIDEO=1
 export URSA_GPS_DIR=GPS
-export URSA_OUTPUT_DIR=outputs/1IronShop
+export URSA_OUTPUT_DIR=outputs/1
 
 python extract_frames.py
 python frame_reliability.py
