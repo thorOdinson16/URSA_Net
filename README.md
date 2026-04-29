@@ -1,4 +1,4 @@
-# URSA-Net: Uncertainty-weighted Road Surface Assessment Network
+# URSA-Net: Uncertainty-weighted Road Surface Assessment Network for Urban Infrastructure Management
 
 A lightweight, end-to-end computer vision pipeline for automated road damage detection, severity assessment, and maintenance prioritization from dashcam video and GPS. URSA-Net processes paired `.mp4` and `.gpx` files to produce per-segment maintenance decisions (urgent / schedule / monitor) across an entire road network with no per-frame annotation required.
 
