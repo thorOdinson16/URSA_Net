@@ -2,7 +2,7 @@
 baseline_comparison.py
 ----------------------
 Implements the simple baseline and compares it against URSA-Net
-across the 72 human-annotated segments (videos 7, 8, 13, 18, 30).
+across the human-annotated segments.
 
 Baseline:
   - Fixed 30-frame windows (no GPS)
@@ -40,7 +40,7 @@ CLASS_WEIGHTS = {
 
 # ── load ground truth ─────────────────────────────────────────────────────────
 def load_groundtruth(path):
-    """Load the 72 canonical segments already validated by human_validation.py"""
+    """Load the canonical segments already validated by human_validation.py"""
     df = pd.read_csv("analysis_outputs/detailed_validation_results.csv")
     result = {}
     for _, row in df.iterrows():
