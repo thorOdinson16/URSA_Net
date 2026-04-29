@@ -11,3 +11,4 @@ augmented_output/
 *.mp4
 videonames.txt
 *.pdf
+severity_groundtruth.csv
