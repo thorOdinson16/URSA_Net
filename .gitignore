@@ -16,3 +16,6 @@ outputs/*/frames/
 outputs/*/filtered_frames/
 .venv/
 *.pyc
+
+# local-only docs/notes (paper, slides, notes)
+misc/

@@ -186,6 +186,7 @@ Runs YOLOv8n with ByteTrack on filtered frames to produce annotated JPEG outputs
 │   ├── baseline_results.csv  severity_groundtruth.csv (manual labels, input)
 │   ├── master_heatmap.html  master_markers.html  heatmap.jpeg  markers.jpeg  pipeline.png
 │   └── analysis/           # figures, tables, validation reports
+├── misc/                   # local-only: paper, slides, notes (gitignored)
 ├── requirements.txt
 ├── r20_dataset/ r22_dataset/ runs/   # training data / YOLO runs (gitignored)
 ```
