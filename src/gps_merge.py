@@ -8,7 +8,7 @@ from video_config import cfg
 # ------------------------------------------------------------
 
 SEVERITY_CSV = cfg.out("severity_scores.csv")
-GEO_CSV      = "geotagged_frames.csv"   # global file produced by gps_sync.py
+GEO_CSV      = "results/geotagged_frames.csv"   # global file produced by gps_sync.py
 OUTPUT_CSV   = cfg.out("severity_scores_geo.csv")
 
 CURRENT_VIDEO = cfg.video

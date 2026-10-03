@@ -11,11 +11,11 @@ Baseline:
   - No uncertainty, no bbox area, no crack length
 
 Run:
-  python baseline_comparison.py
+  python analysis/baseline_comparison.py
 
 Output:
   - Prints comparison table (accuracy, Cohen's kappa, reinspection flags)
-  - Saves baseline_results.csv
+  - Saves results/baseline_results.csv
 """
 
 import os
@@ -27,7 +27,7 @@ from sklearn.metrics import cohen_kappa_score
 # ── config ────────────────────────────────────────────────────────────────────
 ANNOTATED_VIDEOS   = [7, 8, 13, 18, 30]
 OUTPUTS_DIR        = "outputs"
-GROUNDTRUTH_CSV    = "severity_groundtruth.csv"
+GROUNDTRUTH_CSV    = "results/severity_groundtruth.csv"
 WINDOW_SIZE        = 30          # frames per baseline window
 BASELINE_THRESHOLD = None        # set to None → auto-tune to best accuracy
 
@@ -40,8 +40,8 @@ CLASS_WEIGHTS = {
 
 # ── load ground truth ─────────────────────────────────────────────────────────
 def load_groundtruth(path):
-    """Load the canonical segments already validated by human_validation.py"""
-    df = pd.read_csv("analysis_outputs/detailed_validation_results.csv")
+    """Load the canonical segments already validated by groundtruth_severity_validation.py"""
+    df = pd.read_csv("results/analysis/detailed_validation_results.csv")
     result = {}
     for _, row in df.iterrows():
         vid = int(row["video_id"])
@@ -56,7 +56,7 @@ def load_groundtruth(path):
 
 # ── load URSA-Net decisions ───────────────────────────────────────────────────
 def load_ursa_decisions(video_id):
-    # Match human_validation.py exactly: segment_severity.csv, High->Medium remap
+    # Match groundtruth_severity_validation.py exactly: segment_severity.csv, High->Medium remap
     path = os.path.join(OUTPUTS_DIR, str(video_id), "segment_severity.csv")
     df = pd.read_csv(path)
     df.columns = [c.strip().lower() for c in df.columns]
@@ -207,7 +207,8 @@ def main():
             u_preds.append(u_pred); u_trues.append(gt_label)
 
     results_df = pd.DataFrame(rows)
-    results_df.to_csv("baseline_results.csv", index=False)
+    os.makedirs("results", exist_ok=True)
+    results_df.to_csv("results/baseline_results.csv", index=False)
 
     b_acc   = np.mean([p == g for p, g in zip(b_preds, b_trues)])
     u_acc   = np.mean([p == g for p, g in zip(u_preds, u_trues)])
@@ -223,7 +224,7 @@ def main():
           f"{u_acc*100:>7.1f}% {u_kappa:>8.3f} {'148':>6}")
     print("=" * 58)
     print(f"\nTotal annotated segments evaluated: {len(rows)}")
-    print(f"Results saved to: baseline_results.csv")
+    print(f"Results saved to: results/baseline_results.csv")
 
     # confusion breakdown
     print("\n── Baseline confusion ──")

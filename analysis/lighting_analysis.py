@@ -19,8 +19,8 @@ import os
 # CONFIG
 # ------------------------------------------------------------
 
-INPUT_CSV   = "dataset_summary.csv"
-OUTPUT_DIR  = "analysis_outputs"
+INPUT_CSV   = "results/dataset_summary.csv"
+OUTPUT_DIR  = "results/analysis"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 METRICS = [

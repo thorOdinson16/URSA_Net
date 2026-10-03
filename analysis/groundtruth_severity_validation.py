@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, cohen_kappa_score, precision_score, recall_score, f1_score, classification_report
 from collections import Counter
 
-OUTPUT_DIR   = "analysis_outputs"
-GT_CSV       = "severity_groundtruth.csv"
+OUTPUT_DIR   = "results/analysis"
+GT_CSV       = "results/severity_groundtruth.csv"
 OUTPUTS_DIR  = "outputs"
 VIDEO_IDS    = [7, 8, 13, 18, 30]
 

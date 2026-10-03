@@ -12,7 +12,7 @@ import time
 # MODEL PATH
 # -------------------------------------------------
 
-MODEL_PATH = "runs/detect/augmented_model/weights/best.pt"
+MODEL_PATH = os.environ.get("URSA_MODEL", "weights/best.pt")   # trained detector
 
 if not os.path.exists(MODEL_PATH):
     raise FileNotFoundError(f"Model not found: {MODEL_PATH}")

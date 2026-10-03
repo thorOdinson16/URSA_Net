@@ -161,73 +161,36 @@ Runs YOLOv8n with ByteTrack on filtered frames to produce annotated JPEG outputs
 
 ```
 .
-├── GPS/                          # Input: paired .mp4 + .gpx files
-├── outputs/                      # Per-video results (1..32)
-│   └── <video_id>/
-│       ├── decision_summary.txt
-│       ├── severity_scores.csv
-│       ├── segment_severity.csv
-│       ├── decision_output.csv
-│       ├── uncertainty_predictions.csv
-│       ├── frame_reliability.csv
-│       ├── severity_scores_geo.csv
-│       ├── output_video.mp4
-│       └── plots/
-├── analysis_outputs/             # Cross-video analysis figures and reports
-│   ├── classification_report.txt
-│   ├── damage_survey_summary.txt
-│   ├── figure2_lighting_analysis.png
-│   ├── figure3a_decision_distribution.png
-│   ├── figure3b_class_distribution.png
-│   └── figure5_uncertainty_coherence.png
-├── r20_dataset/                  # RDD2020 training data (gitignored)
-├── r22_dataset/                  # RDD2022 training data (gitignored)
-├── runs/                         # YOLO training runs (gitignored)
-│
-├── pipeline.py                   # Main entry point: runs all videos end-to-end
-├── video_config.py               # Shared path resolution via environment variables
-│
-├── gps_sync.py                   # GPS synchronization (run once, all videos)
-├── extract_frames.py             # Frame extraction
-├── frame_reliability.py          # Frame quality scoring
-├── reliability_filter.py         # Frame filtering
-├── uncertainty_estimation.py     # TTA-based uncertainty + detection
-├── uncertainty_estimation_tta.py # TTA variant
-├── uncertainty_estimation_mcd.py # MCDropout variant (baseline evaluation only)
-├── severity_module.py            # Per-frame severity scoring
-├── gps_merge.py                  # GPS-severity join
-├── temporal_aggregation.py       # Segment aggregation
-├── decision_layer.py             # Maintenance decision logic
-├── spatial_graph.py              # Maps and spatial graph
-├── annotate_video.py             # YOLO ByteTrack annotation
-├── rebuild_video.py              # Final MP4 reconstruction
-│
-├── augment_dataset.py            # Training data augmentation (Albumentations)
-├── val_split.py                  # Validation split generation
-├── generate_empty_labels.py      # Placeholder label generation
-├── xmltoyolo.py                  # Pascal VOC XML to YOLO label conversion
-├── dataset.yaml                  # YOLO dataset configuration
-│
-├── baseline_comparision.py       # Fixed-window baseline vs URSA-Net comparison
-├── groundtruth_severity_validation.py  # Human consensus validation
-├── damage_survey.py              # Cross-road survey analysis and paper figures
-├── dataset_summary.py            # Per-video metrics aggregation to CSV
-├── per_video_analytics.py        # Per-video CSV aggregator
-├── lighting_analysis.py          # Daytime vs low-light Mann-Whitney analysis
-├── uncertainty_coherence.py      # Uncertainty vs severity Pearson correlation
-├── reliability_analysis.py       # Per-video reliability plots
-├── severity_analysis.py          # Per-video severity plots
-├── uncertainty_analysis.py       # Per-video uncertainty plots
-├── map.py                        # Standalone map renderer
-│
-├── real_time_inference.py        # Live webcam or video inference
-├── inference_standalone.py       # Standalone single-video inference
-├── run_overnight.py              # Unattended batch runner
-│
-├── yolov8n.pt                    # YOLOv8n base weights
-├── yolo26n.pt                    # Fine-tuned weights
-└── dataset_summary.csv           # Aggregated per-road metrics (32 roads)
+├── GPS/                    # INPUT: paired <id>.mp4 + <id>.gpx (+ .kml) per road
+├── outputs/<id>/           # Per-video pipeline outputs (CSVs, plots/, maps, output_video.mp4)
+├── scripts/                # Entry points (run everything from the repo root)
+│   ├── run_pipeline.py     #   all videos end-to-end
+│   ├── run_single.py       #   one video:  python scripts/run_single.py <id>
+│   └── inference_standalone.py  # detection + tracking only, no GPS
+├── src/                    # Pipeline stages (invoked in order by the runners) + video_config.py
+│   ├── gps_sync.py  extract_frames.py  frame_reliability.py  reliability_filter.py
+│   ├── uncertainty_estimation.py  severity_module.py  gps_merge.py
+│   ├── temporal_aggregation.py  decision_layer.py  spatial_graph.py
+│   ├── annotate_video.py  rebuild_video.py
+│   └── reliability_analysis.py  severity_analysis.py  uncertainty_analysis.py  # per-video plots
+├── analysis/               # Cross-video analysis / paper figures (run after the pipeline)
+│   ├── dataset_summary.py  per_video_analytics.py  damage_survey.py
+│   ├── lighting_analysis.py  uncertainty_coherence.py
+│   ├── groundtruth_severity_validation.py  baseline_comparison.py  map.py
+├── training/               # Detector training data prep + dataset.yaml
+│   └── xmltoyolo.py  generate_empty_labels.py  val_split.py  augment_dataset.py
+├── experiments/            # Uncertainty-method comparisons (TTA vs MC-Dropout)
+├── weights/                # yolov8n.pt (base), yolo26n.pt, best.pt (trained detector, see "Model weights")
+├── results/                # Aggregated outputs (all generated except severity_groundtruth.csv)
+│   ├── geotagged_frames.csv  dataset_summary.{csv,txt}  per_video_metrics.csv
+│   ├── baseline_results.csv  severity_groundtruth.csv (manual labels, input)
+│   ├── master_heatmap.html  master_markers.html  heatmap.jpeg  markers.jpeg  pipeline.png
+│   └── analysis/           # figures, tables, validation reports
+├── requirements.txt
+├── r20_dataset/ r22_dataset/ runs/   # training data / YOLO runs (gitignored)
 ```
+
+All scripts are run **from the repository root** (paths are relative to it).
 
 ---
 
@@ -264,15 +227,12 @@ cd ursa-net
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 
-pip install ultralytics opencv-python pandas numpy scipy scikit-learn \
-            matplotlib albumentations folium psutil tqdm
+pip install -r requirements.txt
 ```
 
-Place trained model weights at:
+### Model weights
 
-```
-runs/detect/augmented_model/weights/best.pt
-```
+The pipeline expects the trained detector at `weights/best.pt` (override with the `URSA_MODEL` environment variable). It is produced by the training command in [Data Preparation](#data-preparation): Ultralytics writes it to `runs/detect/<name>/weights/best.pt`; copy it to `weights/best.pt`. `weights/yolov8n.pt` is the pretrained base used as the training starting point.
 
 ---
 
@@ -291,7 +251,7 @@ XML annotations were converted to YOLO format with unified four-class mapping.
 ### Dataset Augmentation
 
 ```bash
-python augment_dataset.py
+python training/augment_dataset.py
 ```
 
 Applies an Albumentations pipeline — motion/Gaussian blur, brightness/contrast, CLAHE, Gaussian noise, perspective warp, rotation ±15°, synthetic rain, RGB shift, adaptive sharpening — producing one augmented variant per image. Reads from `r20_dataset/` and `r22_dataset/`, writes to `augmented_output/`.
@@ -301,13 +261,13 @@ Applies an Albumentations pipeline — motion/Gaussian blur, brightness/contrast
 Generate empty placeholder labels for unannotated images:
 
 ```bash
-python generate_empty_labels.py
+python training/generate_empty_labels.py
 ```
 
 Convert Pascal VOC XML annotations to YOLO format:
 
 ```bash
-python xmltoyolo.py
+python training/xmltoyolo.py
 ```
 
 ### Dataset Configuration
@@ -324,7 +284,7 @@ names: [longitudinal_crack, transverse_crack, alligator_crack, pothole]
 ### Model Training
 
 ```bash
-yolo detect train model=yolov8n.pt data=dataset.yaml epochs=50 imgsz=640
+yolo detect train model=weights/yolov8n.pt data=training/dataset.yaml epochs=50 imgsz=640
 ```
 
 Baseline (pre-augmentation): mAP50 = 0.606, mAP50-95 = 0.313. Augmented model: mAP50 = 0.607, mAP50-95 = 0.316. Inference speed: **2.3 ms/image (~430 FPS)**.
@@ -353,10 +313,10 @@ The GPS logger and camera must be started simultaneously. The first GPX trackpoi
 ### Full batch run (all videos)
 
 ```bash
-python pipeline.py
+python scripts/run_pipeline.py
 ```
 
-Runs `gps_sync.py` once to produce `geotagged_frames.csv`, then processes each video–GPS pair discovered in `GPS/` sequentially.
+Runs `gps_sync.py` once to produce `results/geotagged_frames.csv`, then processes each video–GPS pair discovered in `GPS/` sequentially.
 
 ### Single video (manual stage-by-stage)
 
@@ -365,34 +325,20 @@ export URSA_VIDEO=1
 export URSA_GPS_DIR=GPS
 export URSA_OUTPUT_DIR=outputs/1
 
-python extract_frames.py
-python frame_reliability.py
-python reliability_filter.py
-python uncertainty_estimation.py
-python severity_module.py
-python gps_merge.py
-python temporal_aggregation.py
-python decision_layer.py
-python spatial_graph.py
-python annotate_video.py
-python rebuild_video.py
+python src/extract_frames.py
+python src/frame_reliability.py
+python src/reliability_filter.py
+python src/uncertainty_estimation.py
+python src/severity_module.py
+python src/gps_merge.py
+python src/temporal_aggregation.py
+python src/decision_layer.py
+python src/spatial_graph.py
+python src/annotate_video.py
+python src/rebuild_video.py
 ```
 
-### Unattended overnight run
 
-```bash
-python run_overnight.py
-```
-
-### Real-time inference
-
-```bash
-python real_time_inference.py
-```
-
-Edit `video_path` inside the script to point to a file, or set it to `0` for webcam input.
-
----
 
 ## Configuration
 
@@ -441,7 +387,7 @@ Each processed video produces the following under `outputs/<stem>/`:
 | `map_severity_heatmap.html` | Interactive Folium severity heatmap by GPS position |
 | `map_priority_markers.html` | Interactive priority marker map colour-coded by maintenance action |
 
-Cross-video analysis outputs written to `analysis_outputs/`:
+Cross-video analysis outputs written to `results/analysis/`:
 
 | File | Description |
 |---|---|
@@ -463,15 +409,15 @@ Cross-video analysis outputs written to `analysis_outputs/`:
 Evaluates URSA-Net against a fixed-window baseline (30-frame windows, no GPS, no uncertainty) on 150 human-annotated segments from videos 7, 8, 13, 18, and 30. Threshold is auto-tuned to maximize accuracy (tuned value: 0.295):
 
 ```bash
-python baseline_comparision.py
+python analysis/baseline_comparison.py
 ```
 
-Outputs accuracy, Cohen's kappa, and per-class confusion for both methods. Saves `baseline_results.csv`.
+Outputs accuracy, Cohen's kappa, and per-class confusion for both methods. Saves `results/baseline_results.csv`.
 
 ### Human consensus validation
 
 ```bash
-python groundtruth_severity_validation.py
+python analysis/groundtruth_severity_validation.py
 ```
 
 Compares URSA-Net segment labels against majority-vote consensus from three independent annotators who viewed raw dashcam footage without pipeline outputs.
@@ -479,7 +425,7 @@ Compares URSA-Net segment labels against majority-vote consensus from three inde
 ### Lighting condition analysis
 
 ```bash
-python lighting_analysis.py
+python analysis/lighting_analysis.py
 ```
 
 Groups videos by GPS timestamp into daytime (06:00–18:00 IST) and low-light (evening 18:00–20:00 + night after 20:00), then runs two-sided Mann-Whitney U tests on severity, uncertainty, and retention.
@@ -487,7 +433,7 @@ Groups videos by GPS timestamp into daytime (06:00–18:00 IST) and low-light (e
 ### Uncertainty coherence validation
 
 ```bash
-python uncertainty_coherence.py
+python analysis/uncertainty_coherence.py
 ```
 
 Computes Pearson r between per-road mean intra-frame uncertainty and mean severity score to validate the uncertainty estimator without bounding-box ground truth.
@@ -495,8 +441,8 @@ Computes Pearson r between per-road mean intra-frame uncertainty and mean severi
 ### Dataset and damage survey
 
 ```bash
-python dataset_summary.py
-python damage_survey.py
+python analysis/dataset_summary.py
+python analysis/damage_survey.py
 ```
 
 `dataset_summary.py` aggregates per-video outputs into `dataset_summary.csv`. `damage_survey.py` produces the fleet-level summary text, Figure 3 charts, and the paper Table 2 CSV.
@@ -604,6 +550,4 @@ Dominant damage class across all surveyed roads: pothole (75%), alligator crack 
 | `xmltoyolo.py` | Converts Pascal VOC XML annotations to YOLO format |
 | `per_video_analytics.py` | Aggregates per-video metrics into `per_video_metrics.csv` |
 | `inference_standalone.py` | Runs detection on a single video without GPS pipeline |
-| `real_time_inference.py` | Live inference with FPS overlay via OpenCV window |
-| `run_overnight.py` | Unattended batch runner with logging |
 | `map.py` | Standalone Folium map renderer from existing segment CSVs |

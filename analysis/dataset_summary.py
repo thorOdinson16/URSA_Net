@@ -18,8 +18,8 @@ from tqdm import tqdm
 OUTPUTS_DIR = "outputs"
 GPS_DIR     = "GPS"
 
-OUTPUT_CSV  = "dataset_summary.csv"
-OUTPUT_TXT  = "dataset_summary.txt"
+OUTPUT_CSV  = "results/dataset_summary.csv"
+OUTPUT_TXT  = "results/dataset_summary.txt"
 
 GPX_NS = "http://www.topografix.com/GPX/1/0"
 
@@ -242,6 +242,7 @@ def main():
 
     df = pd.DataFrame(records)
 
+    os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
     df.to_csv(OUTPUT_CSV, index=False)
     print(f"\nSaved -> {OUTPUT_CSV}")
 

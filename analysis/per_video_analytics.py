@@ -47,6 +47,7 @@ for video in sorted(os.listdir(OUTPUTS_DIR)):
     rows.append(row)
 
 df = pd.DataFrame(rows)
-df.to_csv("per_video_metrics.csv", index=False)
+os.makedirs("results", exist_ok=True)
+df.to_csv("results/per_video_metrics.csv", index=False)
 print(f"Saved {len(df)} videos → per_video_metrics.csv")
 print(df.to_string())

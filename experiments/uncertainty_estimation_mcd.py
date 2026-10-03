@@ -36,7 +36,9 @@ from ultralytics import YOLO
 # CONFIG
 # ------------------------------------------------------------
 
-MODEL_PATH     = "runs/detect/augmented_model/weights/best.pt"
+MODEL_PATH     = os.environ.get("URSA_MODEL", "weights/best.pt")   # trained detector
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 from video_config import cfg
 INPUT_FOLDER = cfg.filtered_frames_dir()
 OUTPUT_CSV   = cfg.out("mcd_baseline_results.csv")

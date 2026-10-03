@@ -2,8 +2,8 @@
 run_single.py  —  Run the URSA-Net pipeline on a single video.
 
 Usage:
-    python run_single.py <stem>
-    python run_single.py myroad          # expects GPS/myroad.mp4 + GPS/myroad.gpx
+    python scripts/run_single.py <stem>
+    python scripts/run_single.py myroad          # expects GPS/myroad.mp4 + GPS/myroad.gpx
 
 Optional overrides (env vars):
     URSA_GPS_DIR     default: GPS
@@ -18,6 +18,7 @@ import time
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
+STAGE_DIR   = "src"   # pipeline stage scripts
 GPS_DIR     = os.environ.get("URSA_GPS_DIR",     "GPS")
 OUTPUTS_DIR = os.environ.get("URSA_OUTPUTS_DIR", "outputs")
 
@@ -32,7 +33,7 @@ def run_step(script_name: str, step_name: str, env: dict):
 
     t0 = time.time()
     process = subprocess.Popen(
-        [sys.executable, script_name],
+        [sys.executable, os.path.join(STAGE_DIR, script_name)],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,

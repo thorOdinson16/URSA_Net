@@ -1,0 +1,12 @@
+ultralytics
+torch
+opencv-python
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+albumentations
+folium
+psutil
+tqdm

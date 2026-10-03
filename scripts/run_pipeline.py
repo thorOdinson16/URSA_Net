@@ -15,6 +15,7 @@ import time
 # CONFIG
 # --------------------------------------------
 
+STAGE_DIR   = "src"   # pipeline stage scripts
 GPS_DIR     = "GPS"       # contains <stem>.mp4 + <stem>.gpx pairs
 OUTPUTS_DIR = "outputs"   # per-video output root
 
@@ -56,7 +57,7 @@ def run_step(script_name: str, step_name: str, env: dict):
     merged_env = {**os.environ, **env}
 
     process = subprocess.Popen(
-        [sys.executable, script_name],
+        [sys.executable, os.path.join(STAGE_DIR, script_name)],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,

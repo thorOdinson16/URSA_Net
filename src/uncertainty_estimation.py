@@ -12,7 +12,7 @@ from video_config import cfg
 # CONFIG
 # ------------------------------------------------------------
 
-MODEL_PATH    = "runs/detect/augmented_model/weights/best.pt"
+MODEL_PATH    = os.environ.get("URSA_MODEL", "weights/best.pt")   # trained detector
 INPUT_FOLDER  = cfg.filtered_frames_dir()
 OUTPUT_CSV    = cfg.out("uncertainty_predictions.csv")
 

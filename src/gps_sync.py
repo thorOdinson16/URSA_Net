@@ -35,7 +35,7 @@ from tqdm import tqdm
 # ------------------------------------------------------------
 
 DATA_DIR    = "GPS"
-OUTPUT_CSV  = "geotagged_frames.csv"
+OUTPUT_CSV  = "results/geotagged_frames.csv"
 DEFAULT_FPS = 30.0
 
 # ------------------------------------------------------------
@@ -257,6 +257,7 @@ def main():
         all_rows.extend(process_pair(stem, gpx_path, mp4_path))
 
     df = pd.DataFrame(all_rows)
+    os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
     df.to_csv(OUTPUT_CSV, index=False)
 
     print("\n" + "=" * 55)

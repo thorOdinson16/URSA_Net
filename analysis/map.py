@@ -1,3 +1,4 @@
+import os
 import re
 import glob
 import folium
@@ -113,8 +114,9 @@ for lat, lon, color, radius in all_markers:
 if bounds:
     marker_map.fit_bounds(bounds)
 
-marker_map.save("master_markers.html")
-print("master_markers.html created")
+os.makedirs("results", exist_ok=True)
+marker_map.save("results/master_markers.html")
+print("results/master_markers.html created")
 
 # ==============================
 # STEP 3B: HEATMAP (OPTIONAL DARK)
@@ -136,5 +138,5 @@ if all_heat:
 if bounds:
     heat_map.fit_bounds(bounds)
 
-heat_map.save("master_heatmap.html")
-print("master_heatmap.html created")
+heat_map.save("results/master_heatmap.html")
+print("results/master_heatmap.html created")

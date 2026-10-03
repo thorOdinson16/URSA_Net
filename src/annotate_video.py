@@ -5,7 +5,7 @@ from ultralytics import YOLO
 
 from video_config import cfg
 
-MODEL_PATH     = "runs/detect/augmented_model/weights/best.pt"
+MODEL_PATH     = os.environ.get("URSA_MODEL", "weights/best.pt")   # trained detector
 INPUT_FOLDER   = cfg.filtered_frames_dir()
 CONF_THRESHOLD = 0.25
 

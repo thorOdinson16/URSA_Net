@@ -11,3 +11,8 @@ augmented_output/
 *.mp4
 videonames.txt
 *.pdf
+# generated / local
+outputs/*/frames/
+outputs/*/filtered_frames/
+.venv/
+*.pyc
